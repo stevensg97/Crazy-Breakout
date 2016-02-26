@@ -12,11 +12,8 @@ Bloques::Bloques() {
 	this->_Puntos=0;
 	this->_Profundidad=0;
 	this->_Golpes=0;
-	this->_Tipo="haah";
+	this->_Tipo=0;
 	this->_Sorpresa=0;
-
-	this->get_golpes();
-	//this->set_golpes(_Golpes);
 
 
 }
@@ -32,3 +29,38 @@ int Bloques::get_golpes(){
 void Bloques::set_golpes(int pGolpes){
 	_Golpes=pGolpes;
 }
+
+int Bloques::get_profundidad(){
+	return _Profundidad;
+}
+
+void Bloques::set_profundidad(int pProfundidad){
+	_Profundidad=pProfundidad;
+}
+
+int Bloques::get_puntos(){
+	return _Puntos;
+}
+
+void Bloques::set_puntos(int pPuntos){
+	_Puntos=pPuntos;
+}
+
+int Bloques::get_sorpresa(){
+	return _Sorpresa;
+}
+
+void Bloques::set_sorpresa(int pSorpresa){
+	_Sorpresa=pSorpresa;
+}
+
+int Bloques::get_tipo(){
+	return _Tipo;
+}
+
+void Bloques::set_tipo(int pTipo){
+	_Tipo=pTipo;
+}
+
+
+

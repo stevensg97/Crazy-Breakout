@@ -11,7 +11,7 @@
 class Bloques {
 //Atributos
 private:
-	char* _Tipo;
+	int _Tipo;
 	int _Puntos;
 	int _Golpes;
 	int _Profundidad;
@@ -22,8 +22,8 @@ public:
 	Bloques();
 	virtual ~Bloques();
 
-	void set_tipo(char* pTipo);
-	char* get_tipo();
+	void set_tipo(int pTipo);
+	int get_tipo();
 	void set_puntos(int pPuntos);
 	int get_puntos();
 	void set_golpes(int pGolpes);
