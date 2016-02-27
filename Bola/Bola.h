@@ -12,10 +12,11 @@ class Bola {
 
 //Atributos
 private:
-	int _Angulo;
+	bool _Crearbola;
 	int _Posicion_x;
 	int _Posicion_y;
-	int _Velocidad;
+	int _Velocidad_x;
+	int _Velocidad_y;
 	int _Profundidad;
 
 //Metodos
@@ -23,16 +24,25 @@ public:
 	Bola();
 	virtual ~Bola();
 
-	void set_angulo(int pAngulo);
-	int get_angulo();
+
 	void set_posicion_x(int pPosicion_x);
 	int get_posicion_x();
+
 	void set_posicion_y(int pPosicion_y);
 	int get_posicion_y();
-	void set_velocidad(int pVelocidad);
-	int get_velocidad();
+
+	int get_velocidad_x();
+	void set_velocidad_x(int pVelocidad);
+
+	int get_velocidad_y();
+	void set_velocidad_y(int pVelocidad);
+
 	void set_profundidad(int pProfundidad);
 	int get_profundidad();
+
+	void set_crearbola(bool pCrearbola);
+	bool get_crearbola();
+	void crear();
 };
 
 #endif /* BOLA_H_ */

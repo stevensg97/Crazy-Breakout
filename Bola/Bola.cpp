@@ -4,15 +4,16 @@
  *  Created on: 21 de feb. de 2016
  *      Author: steven
  */
-
+#include <SFML/Graphics.hpp>
 #include "Bola.h"
 
-Bola::Bola() {
-	this->_Angulo=0;
+Bola::Bola(){
+	this->_Crearbola=false;
 	this->_Profundidad=0;
 	this->_Posicion_x=0;
 	this->_Posicion_y=0;
-	this->_Velocidad=0;
+	this->_Velocidad_x=0;
+	this->_Velocidad_y=0;
 
 }
 
@@ -20,13 +21,7 @@ Bola::~Bola() {
 	// TODO Auto-generated destructor stub
 }
 
-void Bola::set_angulo(int pAngulo){
-	_Angulo=pAngulo;
-}
 
-int Bola::get_angulo(){
-	return _Angulo;
-}
 
 void Bola::set_posicion_x(int pPosicion_x){
 	_Posicion_x=pPosicion_x;
@@ -44,12 +39,12 @@ int Bola::get_posicion_y(){
 	return _Posicion_y;
 }
 
-void Bola::set_velocidad(int pVelocidad){
-	_Velocidad=pVelocidad;
+void Bola::set_velocidad_x(int pVelocidad){
+	_Velocidad_x=pVelocidad;
 }
 
-int Bola::get_velocidad(){
-	return _Velocidad;
+int Bola::get_velocidad_x(){
+	return _Velocidad_x;
 }
 
 void Bola::set_profundidad(int pProfundidad){
@@ -58,5 +53,17 @@ void Bola::set_profundidad(int pProfundidad){
 
 int Bola::get_profundidad(){
 	return _Profundidad;
+}
+
+void Bola::set_crearbola(bool pCrearbola){
+	_Crearbola=pCrearbola;
+}
+
+bool Bola::get_crearbola(){
+	return _Crearbola;
+}
+
+void Bola::crear(){
+
 }
 
