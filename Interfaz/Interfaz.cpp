@@ -18,6 +18,7 @@ Interfaz::Interfaz(){
 	this->_Presionadoi=false;
 	this->_Jugador;
 	this->bolita = new Bola();
+	this->p = new F_NewGame_interfaz();
 	this->_Ventana.create(sf::VideoMode(VENTANA_X, VENTANA_Y), "Crazy Breakout");
 
 }
@@ -109,7 +110,3 @@ void Interfaz::set_presionadoi(bool pPresionadoi){
 bool Interfaz::get_presionadoi(){
 	return _Presionadoi;
 }
-
-//sf::RenderWindow Interfaz::get_ventana(){
-	//return _Ventana;
-//}
