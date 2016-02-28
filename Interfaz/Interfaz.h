@@ -8,15 +8,17 @@
 #ifndef INTERFAZ_H_
 #define INTERFAZ_H_
 #include <SFML/Graphics.hpp>
+#include "InterfazConstants.h"
+#include "../Bola/Bola.h"
 
 using namespace std;
 
-class Interfaz {
+class Interfaz:public InterfazConstants {
 
 private:
-	sf::RenderWindow ventana;
-	sf::Event evento;
-//sf::RectangleShape shape;
+	//sf::RenderWindow _Ventana;
+	sf::Event _Evento;
+    sf::RectangleShape _Jugador;
 
 	bool _IsPlay;
 	bool _Keypress;
@@ -31,6 +33,7 @@ private:
 	void render();
 	void cleared();
 	void update();
+	Bola* bolita;
 
 public:
 	Interfaz();
@@ -40,6 +43,9 @@ public:
 	bool get_presionadod();
 	void set_presionadoi(bool pPresionadoi);
 	bool get_presionadoi();
+	//sf::RenderWindow get_ventana();
+	static sf::RenderWindow _Ventana;
+
 };
 
 #endif /* INTERFAZ_H_ */

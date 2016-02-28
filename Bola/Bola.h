@@ -7,7 +7,7 @@
 
 #ifndef BOLA_H_
 #define BOLA_H_
-
+#include <SFML/Graphics.hpp>
 class Bola {
 
 //Atributos
@@ -18,6 +18,7 @@ private:
 	int _Velocidad_x;
 	int _Velocidad_y;
 	int _Profundidad;
+	sf::CircleShape _Bola;
 
 //Metodos
 public:
@@ -43,6 +44,7 @@ public:
 	void set_crearbola(bool pCrearbola);
 	bool get_crearbola();
 	void crear();
+	void dibujar();
 };
 
 #endif /* BOLA_H_ */

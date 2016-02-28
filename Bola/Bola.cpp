@@ -6,14 +6,16 @@
  */
 #include <SFML/Graphics.hpp>
 #include "Bola.h"
+#include "../Interfaz/Interfaz.h"
 
 Bola::Bola(){
 	this->_Crearbola=false;
 	this->_Profundidad=0;
-	this->_Posicion_x=0;
-	this->_Posicion_y=0;
+	this->_Posicion_x=235;
+	this->_Posicion_y=285;
 	this->_Velocidad_x=0;
 	this->_Velocidad_y=0;
+	this->_Bola;
 
 }
 
@@ -64,6 +66,11 @@ bool Bola::get_crearbola(){
 }
 
 void Bola::crear(){
+	_Bola.setRadius(15);
+	_Bola.setPosition(get_posicion_x(),get_posicion_y());
 
 }
 
+void Bola::dibujar(){
+	Interfaz::_Ventana.draw(_Bola);
+}

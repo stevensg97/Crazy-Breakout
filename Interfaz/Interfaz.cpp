@@ -6,15 +6,19 @@
  */
 
 #include "Interfaz.h"
+sf::RenderWindow Interfaz::_Ventana;
+//Ventana {sf::VideoMode{VENTANA_X, VENTANA_Y}, "Crazy Breakout"}
+Interfaz::Interfaz(){
 
-Interfaz::Interfaz():ventana {sf::VideoMode{500,600}, "Crazy Breakout"}{
 	this->_IsPlay=true;
 	this->_Keypress=false;
 	this->_Keyrelease=false;
 	this->_Click=false;
 	this->_Presionadod=false;
 	this->_Presionadoi=false;
-	//this->shape.RectangleShape(sf::RectangleShape(80,20));
+	this->_Jugador;
+	this->bolita = new Bola();
+	this->_Ventana.create(sf::VideoMode(VENTANA_X, VENTANA_Y), "Crazy Breakout");
 
 }
 
@@ -23,20 +27,23 @@ Interfaz::~Interfaz() {
 }
 
 void Interfaz::inicializar(){
-	ventana.setFramerateLimit(60);
+	_Ventana.setFramerateLimit(60);
+	_Jugador.setSize(sf::Vector2f(80,20));
+	_Jugador.setPosition(210,500);
+	 bolita->crear();
 }
 
 void Interfaz::eventos(){
-	  while (ventana.pollEvent(evento)){
-		  if (evento.type == sf::Event::Closed){
-		     ventana.close();
+	  while (_Ventana.pollEvent(_Evento)){
+		  if (_Evento.type == sf::Event::Closed){
+		     _Ventana.close();
 		  }
 
-		  if (evento.type == sf::Event::KeyPressed && evento.key.code==sf::Keyboard::Right){
+		  if (_Evento.type == sf::Event::KeyPressed && _Evento.key.code==sf::Keyboard::Right){
 		     set_presionadod(true);
 		  }
 
-		  if (evento.type == sf::Event::KeyPressed && evento.key.code==sf::Keyboard::Left){
+		  if (_Evento.type == sf::Event::KeyPressed && _Evento.key.code==sf::Keyboard::Left){
 		     set_presionadoi(true);
 		  }
 
@@ -44,34 +51,36 @@ void Interfaz::eventos(){
 }
 
 void Interfaz::update(){
-//	  if (get_presionadod()==true){
-		 // if(shape.getPosition().x+80<=500){
-			//  x=x+15;
-		      //shape.setPosition(x,y);
-	//	  }
-		 // set_presionadod(false);
+	  if (get_presionadod()==true){
+		  if(_Jugador.getPosition().x+80<500){
+	          X=X+15;
+		      _Jugador.setPosition(X,Y);
+		  }
+		  set_presionadod(false);
 
-	   //}
-
-
-	  //if (get_presionadoi()==true){
-		// if(shape.getPosition().x>0){
-			// x=x-15;
-		     //shape.setPosition(x,y);
-		 //}
-		 //set_presionadoi(false);
+	   }
 
 
-	  //}
+	  if (get_presionadoi()==true){
+		 if(_Jugador.getPosition().x>0){
+			 X=X-15;
+		     _Jugador.setPosition(X,Y);
+		 }
+		 set_presionadoi(false);
+
+
+	  }
 }
 
 void Interfaz::render(){
-	ventana.clear(sf::Color(0,200,0,255));
-	ventana.display();
+	_Ventana.clear(sf::Color(0,200,0,255));
+	_Ventana.draw(_Jugador);
+	bolita->dibujar();
+	_Ventana.display();
 }
 
 void Interfaz::cleared(){
-	ventana.close();
+	_Ventana.close();
 }
 
 void Interfaz::run(){
@@ -99,3 +108,7 @@ void Interfaz::set_presionadoi(bool pPresionadoi){
 bool Interfaz::get_presionadoi(){
 	return _Presionadoi;
 }
+
+//sf::RenderWindow Interfaz::get_ventana(){
+	//return _Ventana;
+//}

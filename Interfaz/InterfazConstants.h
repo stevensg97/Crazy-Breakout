@@ -11,7 +11,11 @@
 
 class InterfazConstants{
 public:
-	int 
+	int VENTANA_X=500;
+	int VENTANA_Y=600;
+	int X=210;
+	int Y=500;
+
 };
 
 
