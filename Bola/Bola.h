@@ -8,6 +8,7 @@
 #ifndef BOLA_H_
 #define BOLA_H_
 #include <SFML/Graphics.hpp>
+
 class Bola {
 
 //Atributos

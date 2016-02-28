@@ -49,6 +49,14 @@ int Bola::get_velocidad_x(){
 	return _Velocidad_x;
 }
 
+void Bola::set_velocidad_y(int pVelocidad){
+	_Velocidad_y=pVelocidad;
+}
+
+int Bola::get_velocidad_y(){
+	return _Velocidad_y;
+}
+
 void Bola::set_profundidad(int pProfundidad){
 	_Profundidad=pProfundidad;
 }

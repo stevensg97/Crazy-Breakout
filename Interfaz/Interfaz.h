@@ -1,4 +1,3 @@
-
 /*
  * Interfaz.h
  *
@@ -11,7 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include "InterfazConstants.h"
 #include "../Bola/Bola.h"
-#include "../Facade_NewGame_Interfaz/FNewGameInterfaz.h"
+#include "../Bloques/Bloques.h"
 
 using namespace std;
 
@@ -36,7 +35,7 @@ private:
 	void cleared();
 	void update();
 	Bola* bolita;
-	F_NewGame_Interfaz *p;
+	Bloques* bloquecito;
 
 public:
 	Interfaz();
