@@ -76,6 +76,7 @@ void Interfaz::render(){
 	_Ventana.clear(sf::Color(0,200,0,255));
 	_Ventana.draw(_Jugador);
 	bolita->dibujar();
+
 	_Ventana.display();
 }
 
