@@ -5,8 +5,9 @@
  *      Author: steven
  */
 
-#include "../Bloques/Bloques.h"
-
+#include <SFML/Graphics.hpp>
+#include "Bloques.h"
+#include "../Interfaz/Interfaz.h"
 
 Bloques::Bloques() {
 	this->_Puntos=0;
@@ -14,6 +15,7 @@ Bloques::Bloques() {
 	this->_Golpes=0;
 	this->_Tipo=0;
 	this->_Sorpresa=0;
+	this->_Bloque;
 
 
 }
@@ -62,5 +64,17 @@ void Bloques::set_tipo(int pTipo){
 	_Tipo=pTipo;
 }
 
+void Bloques::crear(){
+	int x=60;
+	int y=30;
+	_Bloque.setOutlineThickness(3);
+	_Bloque.setOutlineColor(sf::Color::Black);
+	_Bloque.setSize(sf::Vector2f(x,y));
+	_Bloque.setPosition(200,200);
 
+}
+
+void Bloques::dibujar(){
+	Interfaz::_Ventana.draw(_Bloque);
+}
 

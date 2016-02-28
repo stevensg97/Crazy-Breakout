@@ -7,6 +7,7 @@
 
 #ifndef BLOQUES_H_
 #define BLOQUES_H_
+#include <SFML/Graphics.hpp>
 
 class Bloques {
 //Atributos
@@ -16,6 +17,7 @@ private:
 	int _Golpes;
 	int _Profundidad;
 	int _Sorpresa;
+	sf::RectangleShape _Bloque;
 
 //Metodos
 public:
@@ -32,6 +34,9 @@ public:
 	int get_profundidad();
 	void set_sorpresa(int pSorpresa);
 	int get_sorpresa();
+
+	void crear();
+	void dibujar();
 };
 
 #endif /* BLOQUES_H_ */
