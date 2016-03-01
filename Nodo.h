@@ -58,7 +58,6 @@ private:
 
 template<class AnyType>
 Nodo<AnyType>::Nodo(){
-	this->_Data = 0;
 	this->_Next = NULL;
 }
 
@@ -79,7 +78,7 @@ void Nodo<AnyType>::setNext(Nodo<AnyType> *pNodo){
 
 template<class AnyType>
 void Nodo<AnyType>::printNodo(){
-	cout << "ID: " << this << " Dato: " << this->_Data << " Next: " << this->_Next << endl;
+	cout << "ID: " << this << " Dato: " << &this->_Data << " Next: " << this->_Next << endl;
 }
 
 template<class AnyType>
