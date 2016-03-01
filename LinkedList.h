@@ -168,16 +168,21 @@ void LinkedList<AnyType>::insertAtBegin(AnyType pData){
 template<class AnyType>
 void LinkedList<AnyType>::insertAtPositionNode(Nodo<AnyType> *pNode, int pPosition){
 	Nodo<AnyType> *temporal = this->_First;
+	if(pPosition > 1){
 	for(int index = 1; index < pPosition-1; index++){
 		temporal = temporal->getNext();
 	}
 	pNode->setNext(temporal->getNext());
 	temporal->setNext(pNode);
+	}else{
+		this->insertAtBegin(pNode->getData());
+	}
 	this->_Length++;
 }
 
 template<class AnyType>
 void LinkedList<AnyType>::insertAtPosition(AnyType pData,int pPosition){
+	cout << pPosition << " " << &pData << endl;
 	Nodo<AnyType> *temporal = new Nodo<AnyType>;
 	temporal->setData(pData);
 	insertAtPositionNode(temporal,pPosition);
@@ -191,6 +196,7 @@ void LinkedList<AnyType>::insertAtFinalNode(Nodo<AnyType>* pNode){
 	}else{
 		Nodo<AnyType> *temporal = this->_Last;
 		temporal->setNext(pNode);
+		this->_Last = pNode;
 		this->_Length++;
 	}
 }
@@ -216,15 +222,16 @@ AnyType LinkedList<AnyType>::searchBegin(){
 template<class AnyType>
 Nodo<AnyType>* LinkedList<AnyType>::searchPositionNode(int pPosition){
 	Nodo<AnyType> *temporal = this->_First;
-		for(int index = 1; index < pPosition; index++){
-			temporal = temporal->getNext();
-		}
-		return temporal;
+	for(int index = 1; index < pPosition; index++){
+		temporal = temporal->getNext();
+	}
+	return temporal;
 }
 
 template<class AnyType>
 AnyType LinkedList<AnyType>::searchPosition(int pPosition){
 	Nodo<AnyType> *temporal = searchPositionNode(pPosition);
+	AnyType p = temporal->getData();
 	return temporal->getData();
 }
 
@@ -251,6 +258,7 @@ void LinkedList<AnyType>::printList(){
 	cout << "1: ";
 	temporal->printNodo();
 	for(int index = 1; index < this->_Length; index++){
+		cout << this->len() << " " << index<< endl;
 		temporal = temporal->getNext();
 		cout << index+1 << ": ";
 		temporal->printNodo();
