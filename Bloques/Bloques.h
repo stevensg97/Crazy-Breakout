@@ -12,6 +12,7 @@
 class Bloques {
 //Atributos
 private:
+	bool _Visible;
 	int _Tipo;
 	int _Puntos;
 	int _Golpes;
@@ -24,6 +25,8 @@ public:
 	Bloques();
 	virtual ~Bloques();
 
+	void change_Visible();
+	bool get_Visible();
 	void set_tipo(int pTipo);
 	int get_tipo();
 	void set_puntos(int pPuntos);
