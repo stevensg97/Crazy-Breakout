@@ -7,11 +7,12 @@
 
 #include "Server.h"
 
+LinkedList<string>* Server::_Mensajes = new LinkedList<string>();
+
 Server::Server() {
 	this->_Clientes = new LinkedList<int>();
 	this->_Socket = 0;
 	this->_Port = ServerConstants::PORT;
-	this->_Mensajes = new LinkedList<char[]>();
 }
 
 Server::~Server() {
@@ -24,7 +25,7 @@ bool Server::create(){
 		return false;
 	memset(&this->_Info, 0, sizeof(struct sockaddr_in));
 	this->_Info.sin_family = AF_INET;
-	this->_Info.sin_port = htons(ServerConstants::PORT);        // Port to listen
+	this->_Info.sin_port = htons(ServerConstants::PORT);
 	this->_Info.sin_addr.s_addr = htonl(INADDR_ANY);
 	return true;
 }
@@ -64,7 +65,7 @@ void Server::start(){
 			pthread_detach(hilo);
 		}
 
-	    write(data._Conection, "Hello!\r\n", 8);
+	    //this->sendinfo("lol");
 	}
 	close(this->_Socket);
 }
@@ -78,7 +79,8 @@ void* Server::controlador(void* pObjeto){
 		if (bytes < 10)
 			break;
 	}
-	_Mensajes->insertAtFinal(mensaje);
+	cout << mensaje << endl;
+	//_Mensajes->insertAtFinal(mensaje);
 	pthread_exit(NULL);
 }
 
@@ -95,5 +97,4 @@ string Server::getMensaje(){
 		mensaje = this->_Mensajes->searchBegin();
 		this->_Mensajes->deleteAtBegin();
 	}
-	return mensaje;
 }
