@@ -1,3 +1,4 @@
+
 /*
  * Interfaz.h
  *
@@ -11,13 +12,13 @@
 #include "InterfazConstants.h"
 #include "../Bola/Bola.h"
 #include "../Bloques/Bloques.h"
+#include "../Structures/LinkedList.h"
 
 using namespace std;
 
 class Interfaz:public InterfazConstants {
 
 private:
-	//sf::RenderWindow _Ventana;
 	sf::Event _Evento;
     sf::RectangleShape _Jugador;
 
@@ -35,17 +36,15 @@ private:
 	void cleared();
 	void update();
 	Bola* bolita;
-	Bloques* bloquecito;
 
 public:
-	Interfaz();
+	Interfaz(LinkedList<sf::RectangleShape>* pRects, LinkedList<sf::CircleShape>* pCircles);
 	virtual ~Interfaz();
 	void run();
 	void set_presionadod(bool pPresionadod);
 	bool get_presionadod();
 	void set_presionadoi(bool pPresionadoi);
 	bool get_presionadoi();
-	//sf::RenderWindow get_ventana();
 	static sf::RenderWindow _Ventana;
 
 };
