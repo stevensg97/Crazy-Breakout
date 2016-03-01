@@ -57,6 +57,8 @@ public:
 	 */
 	void printMatriz();
 
+	LinkedList< LinkedList<AnyType>* >* getBody();
+
 private:
 	LinkedList< LinkedList<AnyType>* > *_Body;
 	int _Columnas;
@@ -75,6 +77,7 @@ Matriz<AnyType>::Matriz(int pCantdeColums, int pCantdeFilas){
 			fila->insertAtBeginNode(nodo);
 		}
 		_Body->insertAtBegin(fila);
+		pCantdeFilas=this->_Filas;
 	}
 }
 
@@ -85,33 +88,38 @@ Matriz<AnyType>::~Matriz(){
 
 template<class AnyType>
 void Matriz<AnyType>::insertData(int pColumna, int pFila, AnyType pData){
-	LinkedList<AnyType> *columna = _Body->searchPosition(pColumna);
-	columna->insertAtPosition(pData,pFila);
+	LinkedList<AnyType> *columna = _Body->searchPosition(pColumna+1);
+	Nodo<AnyType>* nodo = columna->searchPositionNode(pFila+1);
+	nodo->setData(pData);
 }
+
 
 template<class AnyType>
 AnyType Matriz<AnyType>::getData(int pColumna, int pFila){
-	LinkedList<AnyType> *columna = _Body->searchPosition(pColumna);
-	return columna->searchPosition(pFila);
+	LinkedList<AnyType> columna = *_Body->searchPosition(pColumna+1);
+	AnyType p = columna.searchPosition(pFila+1);
+	return columna.searchPosition(pFila+1);
 }
 
 template<class AnyType>
 void Matriz<AnyType>::deleteData(int pColumna,int pFila){
-	LinkedList<AnyType> *columna = _Body->searchPosition(pColumna);
-	columna->deleteAtPosition(pFila);
+	LinkedList<AnyType> *columna = _Body->searchPosition(pColumna+1);
+	columna->deleteAtPosition(pFila+1);
 }
 
 template<class AnyType>
 void Matriz<AnyType>::printMatriz(){
 	cout << "Matriz" << endl;
-	for(int columna = 0; columna < this->_Columnas; columna++){
-		LinkedList<AnyType> *Columna = _Body->searchPosition(columna);
-		for(int fila = 0; fila < this->_Filas; fila++){
-			cout << "C=" << columna << "F=" << fila;
-			cout << Columna->searchPosition(fila) << endl;
-		}
+	for(int columna = 0; columna < _Body->len(); columna++){
+		LinkedList<AnyType> *Columna = _Body->searchPosition(columna+1);
+		Columna->printList();
 	}
 	cout << "__________________" << endl;
+}
+
+template<class AnyType>
+LinkedList< LinkedList<AnyType>* >* Matriz<AnyType>::getBody(){
+	return this->_Body;
 }
 
 
