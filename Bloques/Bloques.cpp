@@ -10,18 +10,44 @@
 #include "../Interfaz/Interfaz.h"
 
 Bloques::Bloques() {
-	this->_Puntos=0;
+	this->_Tipo= rand() % 5;
+	this->_Visible = false;
+	switch(this->_Tipo){
+	case 0:
+		this->_Puntos = 10;
+		this->_Golpes = 1;
+		break;
+	case 1:
+		this->_Puntos = 15;
+		this->_Golpes = 2;
+		break;
+	case 2:
+		this->_Puntos = 20;
+		this->_Golpes = 3;
+		break;
+	case 3:
+		this->_Puntos = 30;
+		this->_Golpes = 1;
+		break;
+	case 4:
+		this->_Puntos = 0;
+		this->_Golpes = 0;
+	}
 	this->_Profundidad=0;
-	this->_Golpes=0;
-	this->_Tipo=0;
 	this->_Sorpresa=0;
 	this->_Bloque;
-
-
 }
 
 Bloques::~Bloques() {
 	// TODO Auto-generated destructor stub
+}
+
+void Bloques::change_Visible(){
+	this->_Visible = !this->_Visible;
+}
+
+bool Bloques::get_Visible(){
+	return this->_Visible;
 }
 
 int Bloques::get_golpes(){
@@ -77,4 +103,3 @@ void Bloques::crear(){
 void Bloques::dibujar(){
 	Interfaz::_Ventana.draw(_Bloque);
 }
-
