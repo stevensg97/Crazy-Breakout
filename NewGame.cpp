@@ -23,10 +23,10 @@ void NewGame::start(){
 	for (int index = 0; numBloques > index; index++){
 		int posicion = rand() % GameConstants::NUMERO_DE_ELEMENTOS_EN_MATIRIZ;
 		Bloques *bloque = new Bloques();
+		bloque->change_Visible();
 		this->_Bloques->insertData(posicion/GameConstants::NUMERO_DE_COLUMNAS
 				,posicion%GameConstants::NUMERO_DE_COLUMNAS,*bloque);
 	}
-	//this->_Bloques->printMatriz();
 	this->_Jugadores->insertAtBegin(*this->_Jugador);
 	pthread_t hilo;
 	pthread_create(&hilo,0,NewGame::timer,(void*)this->_Bolas);
