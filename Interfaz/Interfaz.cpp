@@ -6,10 +6,11 @@
  */
 
 #include "Interfaz.h"
+#include "../Facade/Facade.h"
 sf::RenderWindow Interfaz::_Ventana;
-//Ventana {sf::VideoMode{VENTANA_X, VENTANA_Y}, "Crazy Breakout"}
-Interfaz::Interfaz(){
 
+
+Interfaz::Interfaz(LinkedList<sf::RectangleShape>* pRects, LinkedList<sf::CircleShape>* pCircles){
 	this->_IsPlay=true;
 	this->_Keypress=false;
 	this->_Keyrelease=false;
@@ -18,7 +19,6 @@ Interfaz::Interfaz(){
 	this->_Presionadoi=false;
 	this->_Jugador;
 	this->bolita = new Bola();
-	this->bloquecito= new Bloques();
 	this->_Ventana.create(sf::VideoMode(VENTANA_X, VENTANA_Y), "Crazy Breakout",sf::Style::Close);
 
 }
@@ -28,11 +28,13 @@ Interfaz::~Interfaz() {
 }
 
 void Interfaz::inicializar(){
+
 	_Ventana.setFramerateLimit(60);
 	_Jugador.setSize(sf::Vector2f(80,20));
 	_Jugador.setPosition(210,500);
-	 bolita->crear();
-	 bloquecito->crear();
+	bolita->crear();
+	Facade* facade = new Facade();
+	facade->crear();
 }
 
 void Interfaz::eventos(){
@@ -78,7 +80,10 @@ void Interfaz::render(){
 	_Ventana.clear(sf::Color(0,200,0,255));
 	_Ventana.draw(_Jugador);
 	bolita->dibujar();
-	bloquecito->dibujar();
+	Facade *facade = new Facade();
+	for(int rects = 1; rects < facade->_Rect->len()+1; rects++){
+		_Ventana.draw(facade->_Rect->searchPosition(rects));
+	}
 
 	_Ventana.display();
 }
@@ -112,7 +117,3 @@ void Interfaz::set_presionadoi(bool pPresionadoi){
 bool Interfaz::get_presionadoi(){
 	return _Presionadoi;
 }
-
-//sf::RenderWindow Interfaz::get_ventana(){
-	//return _Ventana;
-//}
