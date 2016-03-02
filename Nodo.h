@@ -30,7 +30,7 @@ public:
 	 */
 	void setData(AnyType pData);
 	/**
-	 * @brief Referensa su sigiente Nodo
+	 * @brief Referensia su sigiente Nodo
 	 * @param pNodo Nodo continuo
 	 */
 	void setNext(Nodo<AnyType> *pNodo);

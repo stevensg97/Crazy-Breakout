@@ -26,7 +26,7 @@ void Facade::start(){
 }
 
 void Facade::crear(){
-	//Creacion de obejetos bloques
+	//Creacion de objetos bloques
 	for(int indexBloque = 0; indexBloque < GameConstants::NUMERO_DE_ELEMENTOS_EN_MATIRIZ; indexBloque++){
 		int columna = indexBloque/GameConstants::NUMERO_DE_COLUMNAS;
 		int fila = indexBloque%GameConstants::NUMERO_DE_COLUMNAS;
