@@ -57,6 +57,10 @@ public:
 	 */
 	void printMatriz();
 
+	/**
+	 * @brief Metodo devuelve la estructura
+	 * @return LinckeList<AnyType>
+	 */
 	LinkedList< LinkedList<AnyType>* >* getBody();
 
 private:
