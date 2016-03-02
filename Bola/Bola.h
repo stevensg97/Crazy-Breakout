@@ -1,8 +1,9 @@
-/*
- * Bola.h
- *
- *  Created on: 21 de feb. de 2016
- *      Author: steven
+/**
+ * @file Bola.h
+ * @date 15/2/16
+ * @author Maider Steven Sanchez Gonzalez 2015014362
+ * @title Bola
+ * @brief Clase para crear las bolas del juego
  */
 
 #ifndef BOLA_H_
@@ -23,28 +24,71 @@ private:
 
 //Metodos
 public:
+	/**
+	* @brief Metodo constructor de Bloques
+	*/
 	Bola();
+	/**
+	* @brief Metodo destructor de Bloques
+	*/
 	virtual ~Bola();
-
-
+	/**
+	* @brief Asigna la posicion en eje x de la bola
+	* @param pPosicion_x Posicion en x de la bola int
+	*/
 	void set_posicion_x(int pPosicion_x);
+	/**
+	* @brief Recupera la posicion en el eje x de la bola
+	* @return Retorna _Posicion_x posicion de la bola en eje x: int
+	*/
 	int get_posicion_x();
-
+	/**
+	* @brief Asigna la posicion en eje y de la bola
+	* @param pPosicion_y Posicion en y de la bola int
+	*/
 	void set_posicion_y(int pPosicion_y);
+	/**
+	* @brief Recupera la posicion en el eje y de la bola
+	* @return Retorna _Posicion_y posicion de la bola en eje y: int
+	*/
 	int get_posicion_y();
-
-	int get_velocidad_x();
+	/**
+	* @brief Asigna la velocidad en el eje x de la bola
+	* @param pVelocidad Velocidad en eje x de la bola int
+	*/
 	void set_velocidad_x(int pVelocidad);
-
-	int get_velocidad_y();
+	/**
+	* @brief Recupera la velocidad en el eje x de la bola
+	* @return Retorna _Velocidad_x velocidad de la bola en eje x: int
+	*/
+	int get_velocidad_x();
+	/**
+	* @brief Asigna la velocidad en el eje y de la bola
+	* @param pVelocidad Velocidad en eje y de la bola int
+	*/
 	void set_velocidad_y(int pVelocidad);
-
+	/**
+	* @brief Recupera la velocidad en el eje y de la bola
+	* @return Retorna _Velocidad_y velocidad de la bola en eje y: int
+	*/
+	int get_velocidad_y();
+	/**
+	* @brief Asigna la profundidad de la bola
+	* @param pProfundidad Profundidad de la bola int
+	*/
 	void set_profundidad(int pProfundidad);
+	/**
+	* @brief Recupera la profundidad de la bola
+	* @return Retorna _Profundidad profundidad de la bola: int
+	*/
 	int get_profundidad();
-
-	void set_crearbola(bool pCrearbola);
-	bool get_crearbola();
+	/**
+	* @brief Asigna las caracteristicas a la bola para ser creada
+	*/
 	void crear();
+	/**
+	* @brief Muestra la bola creada en pantalla
+	*/
 	void dibujar();
 };
 
