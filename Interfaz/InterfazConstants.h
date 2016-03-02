@@ -1,8 +1,9 @@
-/*
- * InterfazConstants.h
- *
- *  Created on: 27 de feb. de 2016
- *      Author: steven
+/**
+ * @file InterfazConstants.h
+ * @date 16/2/16
+ * @author Maider Steven Sanchez Gonzalez 2015014362
+ * @title InterfazConstants
+ * @brief Constantes de la clase Interfaz del juego
  */
 
 #ifndef INTERFAZCONSTANTS_H_
