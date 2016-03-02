@@ -1,8 +1,9 @@
-/*
- * GameConstants.h
- *
- *  Created on: 23 de feb. de 2016
- *      Author: jose
+/**
+ * @file GameConstants.h
+ * @date 23/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title GameConstants
+ * @brief Constantes del juego
  */
 
 #ifndef GAMECONSTANTS_H_
@@ -23,4 +24,5 @@ public:
 	static const int TAMANO_DE_JUGADOR = 80;
 
 };
+
 
