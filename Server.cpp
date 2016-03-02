@@ -1,8 +1,9 @@
-/*
- * Server.cpp
- *
- *  Created on: 15 de feb. de 2016
- *      Author: jose
+/**
+ * @file Server.cpp
+ * @date 15/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title Server
+ * @brief Server del juego
  */
 
 #include "Server.h"
