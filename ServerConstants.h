@@ -1,8 +1,9 @@
-/*
- * ServerConstants.h
- *
- *  Created on: 15 de feb. de 2016
- *      Author: jose
+/**
+ * @file ServerConstants.h
+ * @date 15/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title ServerConstants
+ * @brief Server del Juego
  */
 
 #ifndef SERVERCONSTANTS_H_
