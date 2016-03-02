@@ -3,6 +3,12 @@
  *
  *  Created on: 15 de feb. de 2016
  *      Author: jose
+/**
+ * @file Server.h
+ * @date 15/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title Server
+ * @brief Server del juego
  */
 
 #ifndef SERVER_H_
@@ -19,6 +25,9 @@
 
 using namespace std;
 
+/**
+ * @brief estructura que con tiene la informacion del socket
+ */
 struct infoSocket{
 	int _Conection;
 	sockaddr_in _Info;
@@ -52,9 +61,6 @@ public:
 	 */
 	string getMensaje();
 
-
-	static LinkedList<> *_Mensajes;
-
 private:
 	int _Socket;
 	int _Port;
@@ -63,6 +69,7 @@ private:
 	bool connect();
 	static void * controlador(void *pObjeto);
 	LinkedList<int> *_Clientes;
+	static LinkedList<string> *_Mensajes;
 };
 
 #endif /* SERVER_H_ */
