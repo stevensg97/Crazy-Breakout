@@ -33,10 +33,17 @@ public:
 	 */
 	void start();
 
+	/**
+	 * @brief Atributo matriz que contiene los bloques
+	 */
 	Matriz<Bloques>* getMatrizDeBloques();
-
+	/**
+	 * @brief Atributo ListaSimple que contiene las bolas de los juegos
+	 */
 	LinkedList<Bola>* getListaDeBolas();
-
+	/**
+	 * @brief Atributo ListaSimple que tiene los jugadores
+	 */
 	LinkedList<Jugador>* getListaDeJugadores();
 
 private:
