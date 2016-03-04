@@ -1,6 +1,6 @@
 /**
  * @file Bola.h
- * @date 15/2/16
+ * @date 18/2/16
  * @author Maider Steven Sanchez Gonzalez 2015014362
  * @title Bola
  * @brief Clase para crear las bolas del juego

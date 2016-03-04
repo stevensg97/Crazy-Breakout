@@ -1,6 +1,6 @@
 /**
  * @file InterfazConstants.h
- * @date 16/2/16
+ * @date 20/2/16
  * @author Maider Steven Sanchez Gonzalez 2015014362
  * @title InterfazConstants
  * @brief Constantes de la clase Interfaz del juego

@@ -1,6 +1,6 @@
 /**
  * @file Bloques.h
- * @date 15/2/16
+ * @date 18/2/16
  * @author Maider Steven Sanchez Gonzalez 2015014362
  * @title Bloques
  * @brief Clase para crear los bloques del juego

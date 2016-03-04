@@ -1,6 +1,6 @@
 /**
  * @file Menu.h
- * @date 16/2/16
+ * @date 25/2/16
  * @author Maider Steven Sanchez Gonzalez 2015014362
  * @title Menu
  * @brief Clase para crear la ventana de menu de inicio del juego

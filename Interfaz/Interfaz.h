@@ -1,7 +1,7 @@
 
 /**
  * @file Interfaz.h
- * @date 15/2/16
+ * @date 20/2/16
  * @author Maider Steven Sanchez Gonzalez 2015014362
  * @title Interfaz
  * @brief Clase para crear la ventana de juego
