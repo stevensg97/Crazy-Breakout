@@ -21,7 +21,7 @@ Facade::Facade() {
 
 void Facade::start(){
 		_Juego = new NewGame();
-		Interfaz *_Interfaz = new Interfaz(_Rect,_Circle);
+		Interfaz *_Interfaz = new Interfaz();
 		_Juego->start();
 		_Interfaz->run();
 }
