@@ -1,4 +1,3 @@
-
 /**
  * @file Interfaz.h
  * @date 20/2/16
@@ -44,7 +43,7 @@ public:
 	* @param pRects lista enlazada de rectangulos(bloques)
 	* @param pCircles lista enlazada de circulos(bolas)
 	*/
-	Interfaz(LinkedList<sf::RectangleShape>* pRects, LinkedList<sf::CircleShape>* pCircles);
+	Interfaz();
 	/**
 	* @brief Metodo destructor de Interfaz
 	*/
