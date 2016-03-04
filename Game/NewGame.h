@@ -1,10 +1,17 @@
+/**
+ * @file NewGame.h
+ * @date 23/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title Juego
+ * @brief Logica del juego
+ */
+
 #ifndef NEWGAME_H_
 #define NEWGAME_H_
 
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include <ctime>
 #include <pthread.h>
 #include "../Structures/Matriz.h"
 #include "../Structures/LinkedList.h"
