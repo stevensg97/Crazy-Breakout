@@ -65,14 +65,6 @@ int Bola::get_profundidad(){
 	return _Profundidad;
 }
 
-void Bola::set_crearbola(bool pCrearbola){
-	_Crearbola=pCrearbola;
-}
-
-bool Bola::get_crearbola(){
-	return _Crearbola;
-}
-
 void Bola::crear(){
 	_Bola.setRadius(15);
 	_Bola.setPosition(get_posicion_x(),get_posicion_y());
