@@ -10,7 +10,7 @@
 sf::RenderWindow Interfaz::_Ventana;
 
 
-Interfaz::Interfaz(LinkedList<sf::RectangleShape>* pRects, LinkedList<sf::CircleShape>* pCircles){
+Interfaz::Interfaz(){
 	this->_IsPlay=true;
 	this->_Keypress=false;
 	this->_Evento;
