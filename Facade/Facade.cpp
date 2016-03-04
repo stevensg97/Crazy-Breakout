@@ -1,8 +1,9 @@
-/*
- * Facade.cpp
- *
- *  Created on: 28 de feb. de 2016
- *      Author: jose
+ /**
+ * @file Facade.cpp
+ * @date 28/2/16
+ * @author Jose Eduardo Jimenez A 2014072577
+ * @title Facade
+ * @brief Facade entre las clase NewGame e Interfaz
  */
 
 #include <SFML/Graphics.hpp>
@@ -61,14 +62,6 @@ void Facade::crear(){
 	//for(int indexbola = 0; index)
 }
 
-void Facade::dibujar(){
-	for(int index = 0; index < this->_Rect->len(); index++){
-		Interfaz::_Ventana.draw(this->_Rect->searchBegin());
-		_Rect->deleteAtBegin();
-	}
-}
-
 Facade::~Facade() {
 	// TODO Auto-generated destructor stub
 }
-
